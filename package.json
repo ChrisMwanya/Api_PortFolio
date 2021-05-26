@@ -1,9 +1,10 @@
 {
-  "name": "my-static-test",
+  "name": "aapimyprojects",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
+    "start" :"nodemon",
     "build": "babel src --out-dir dist",
     "test": "jest --coverage",
     "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js|jsx|ts|tsx|json)\"",
@@ -14,7 +15,7 @@
     "husky-install": "husky install"
   },
   "keywords": [],
-  "author": "",
+  "author": "Mwanya Christian",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.14.3",
@@ -26,5 +27,11 @@
     "husky": "^6.0.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.3.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7",
+    "uuid": "^8.3.2"
   }
 }
