@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 const express = require("express");
-const router = express.router;
+const router = express.Router();
 const technoController = require("./../controllers/technocontroller");
 
 const BASE_URI = "/api_portfolio/";

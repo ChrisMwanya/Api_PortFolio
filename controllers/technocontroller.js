@@ -1,4 +1,5 @@
-import techno from "./../models/technos";
+/* eslint-disable no-undef */
+const  techno =require("./../models/technos") ;
 
 // eslint-disable-next-line no-undef
 module.exports = {

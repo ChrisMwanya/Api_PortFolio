@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
-import mysql from "mysql";
+const mysql = require('mysql');
 // eslint-disable-next-line no-undef
-require(dotenv).config();
+
 
 module.exports = mysql.createConnection({
   host: process.env.host_db || "localhost",
