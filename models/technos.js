@@ -12,17 +12,17 @@ module.exports = {
     );
   },
 
-  create: (connection, dataToInsert, callback) => {    
+  create: (connection, technoToInsert, callback) => {
     connection.query(
       "INSERT INTO techno( nom_techno ) VALUES (?)",
-      dataToInsert.nom_techno,
+      technoToInsert.nom_techno,
       callback
     );
   },
-  update: (connection, dataToUpdate, callback) => {
+  update: (connection, technoToUpdate, callback) => {
     connection.query(
       "UPDATE techno SET nom_techno = ? WHERE id_techno = ?",
-      [dataToUpdate.nom_techno, dataToUpdate.id],
+      [technoToUpdate.nom_techno, technoToUpdate.id],
       callback
     );
   },
