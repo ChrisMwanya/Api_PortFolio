@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-const  techno =require("./../models/technos") ;
+const techno = require("./../models/technos");
 
 // eslint-disable-next-line no-undef
 module.exports = {
@@ -23,10 +23,11 @@ module.exports = {
     });
   },
 
-  addTechno: (request, response) => {
+  addTechno: (request, response) => { 
     techno.create(request.con, request.body, (error) => {
+      
       if (error) {
-        console.log("requete échoué");
+        console.log(error);
         return;
       }
       response.status(200).send("ressource added successfully");
@@ -34,6 +35,7 @@ module.exports = {
   },
 
   updateTechno: (request, response) => {
+    request.body.id = request.params.id;
     techno.update(request.con, request.body, (error) => {
       if (error) {
         console.log("requete échoué");
@@ -43,10 +45,10 @@ module.exports = {
     });
   },
 
-  deleteTechno: (request, response) => {
+  deleteTechno: (request, response) => {    
     techno.delete(request.con, request.params.id, (error) => {
       if (error) {
-        console.log("requete échoué");
+        console.log(error);
         return;
       }
       response.status(200).send("ressource deleted successfully");

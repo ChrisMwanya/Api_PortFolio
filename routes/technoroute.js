@@ -3,7 +3,8 @@ const express = require("express");
 const router = express.Router();
 const technoController = require("./../controllers/technocontroller");
 
-const BASE_URI = "/api_portfolio/";
+const BASE_URI = "/api_portfolio";
+
 
 router.get(`${BASE_URI}/technos`, technoController.getTechnos);
 router.get(`${BASE_URI}/techno/:id`, technoController.getTechno);

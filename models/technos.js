@@ -13,23 +13,24 @@ module.exports = {
   },
 
   create: (connection, dataToInsert, callback) => {
+    console.log("model", dataToInsert);
     connection.query(
       "INSERT INTO techno( nom_techno ) VALUES (?)",
-      dataToInsert,
+      dataToInsert.nom_techno,
       callback
     );
   },
   update: (connection, dataToUpdate, callback) => {
     connection.query(
       "UPDATE techno SET nom_techno = ? WHERE id_techno = ?",
-      [dataToUpdate.nomTechno, dataToUpdate.id],
+      [dataToUpdate.nom_techno, dataToUpdate.id],
       callback
     );
   },
 
   delete: (connection, idTechno, callback) => {
     connection.query(
-      "DELETE FROM nom_techno WHERE id_techno = ?",
+      "DELETE FROM techno WHERE id_techno = ?",
       idTechno,
       callback
     );

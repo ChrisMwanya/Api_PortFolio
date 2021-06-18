@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
-const mysql = require('mysql');
+const mysql = require("mysql");
 // eslint-disable-next-line no-undef
-
 
 module.exports = mysql.createConnection({
   host: process.env.host_db || "localhost",
