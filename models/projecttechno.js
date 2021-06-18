@@ -14,7 +14,7 @@ module.exports = {
 
   getByIdProject: (connection, idProject, callback) => {
     connection.query(
-      "SELECT * FROM techno INNER JOIN project_techno ON project_techno.id_techno=techno.id_techno WHERE project_techno.id_project = ?",
+      "SELECT nom_techno FROM techno INNER JOIN project_techno ON project_techno.id_techno=techno.id_techno WHERE project_techno.id_project = ?",
       idProject,
       callback
     );
@@ -22,7 +22,7 @@ module.exports = {
 
   getByIdTechno: (connection, idTechno, callback) => {
     connection.query(
-      "SELECT * FROM project INNER JOIN project_Techno ON project.id_project = project_techno.id_project WHERE project_techno.id_techno = ?",
+      "SELECT * FROM project INNER JOIN project_techno ON project.id_project = project_techno.id_project WHERE project_techno.id_techno = ?",
       idTechno,
       callback
     );
