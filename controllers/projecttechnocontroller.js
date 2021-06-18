@@ -5,8 +5,10 @@ module.exports = {
   getProjectTechnos: (request, response) => {
     projecttechno.get(request.con, (error, result) => {
       if (error) {
-        console.log("requete échoué");
-        return;
+        response.status(400).json({
+          message: err.message
+        });      
+        return ;
       }
       return response.status(200).send(result);
     });
@@ -15,8 +17,10 @@ module.exports = {
   getProjectTechno: (request, response) => {
     projecttechno.getById(request.con, request.params.id, (error, result) => {
       if (error) {
-        console.log(error);
-        return;
+        response.status(400).json({
+          message: err.message
+        });      
+        return ;
       }
       return response.status(200).send(result);
     });

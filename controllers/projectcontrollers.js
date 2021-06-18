@@ -5,9 +5,11 @@ const project = require("./../models/projects");
 module.exports = {
   getProjects: (request, response) => {
     project.get(request.con, (error, result) => {
-      if (error) {
-        console.log("requete échoué");
-        return;
+      if (error) {  
+        response.status(400).json({
+          message: err.message
+        });      
+        return ;
       }
       return response.status(200).send(result);
     });
@@ -16,8 +18,10 @@ module.exports = {
   getProject: (request, response) => {
     project.getById(request.con, request.params.id, (error, result) => {
       if (error) {
-        console.log("requete échoué");
-        return;
+        response.status(400).json({
+          message: err.message
+        });      
+        return ;
       }
       return response.status(200).send(result);
     });
@@ -26,8 +30,10 @@ module.exports = {
   addProject: (request, response) => {
     project.create(request.con, request.body, (error) => {
       if (error) {
-        console.log(error);
-        return;
+        response.status(400).json({
+          message: err.message
+        });      
+        return ;
       }
       response.status(200).send("ressource added successfully");
     });
@@ -37,8 +43,10 @@ module.exports = {
     request.body.id = request.params.id;
     project.update(request.con, request.body, (error) => {
       if (error) {
-        console.log(error);
-        return;
+        response.status(400).json({
+          message: err.message
+        });      
+        return ;
       }
       response.status(200).send("ressource updated successfully");
     });
@@ -47,8 +55,10 @@ module.exports = {
   deleteProject: (request, response) => {
     project.delete(request.con, request.params.id, (error) => {
       if (error) {
-        console.log(error);
-        return;
+        response.status(400).json({
+          message: err.message
+        });      
+        return ;
       }
       response.status(200).send("ressource deleted successfully");
     });
