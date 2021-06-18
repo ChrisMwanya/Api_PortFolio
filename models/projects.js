@@ -14,9 +14,9 @@ module.exports = {
 
   create: (connection, projectToInsert, callback) => {
     connection.query(
-      "INSERT INTO project( project, description_project, url_image_project, url_github_project, url_project_deploy) VALUES (?,?,?,?,?)",
+      "INSERT INTO project( nom_project, description_project, url_image_project, url_github_project, url_project_deploy) VALUES (?,?,?,?,?)",
       [
-        projectToInsert.project,
+        projectToInsert.projectName,
         projectToInsert.descriptionProject,
         projectToInsert.urlImageProject,
         projectToInsert.urlGithubProject,
@@ -27,9 +27,9 @@ module.exports = {
   },
   update: (connection, projectToUpdate, callback) => {
     connection.query(
-      "UPDATE project SET project = ?, description_project = ?, url_image_project = ?, url_github_project = ?, url_project_deploy = ? WHERE id_project = ?",
+      "UPDATE project SET nom_project = ?, description_project = ?, url_image_project = ?, url_github_project = ?, url_project_deploy = ? WHERE id_project = ?",
       [
-        projectToUpdate.project,
+        projectToUpdate.projectName,
         projectToUpdate.descriptionProject,
         projectToUpdate.urlImageProject,
         projectToUpdate.urlGithubProject,
