@@ -6,9 +6,9 @@ module.exports = {
     projecttechno.get(request.con, (error, result) => {
       if (error) {
         response.status(400).json({
-          message: err.message
-        });      
-        return ;
+          message: err.message,
+        });
+        return;
       }
       return response.status(200).send(result);
     });
@@ -18,9 +18,9 @@ module.exports = {
     projecttechno.getById(request.con, request.params.id, (error, result) => {
       if (error) {
         response.status(400).json({
-          message: err.message
-        });      
-        return ;
+          message: err.message,
+        });
+        return;
       }
       return response.status(200).send(result);
     });

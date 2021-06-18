@@ -7,9 +7,9 @@ module.exports = {
     techno.get(request.con, (error, result) => {
       if (error) {
         response.status(400).json({
-          message: err.message
-        });      
-        return ;
+          message: err.message,
+        });
+        return;
       }
       return response.status(200).send(result);
     });
@@ -19,9 +19,9 @@ module.exports = {
     techno.getById(request.con, request.params.id, (error, result) => {
       if (error) {
         response.status(400).json({
-          message: err.message
-        });      
-        return ;
+          message: err.message,
+        });
+        return;
       }
       return response.status(200).send(result);
     });
@@ -31,9 +31,9 @@ module.exports = {
     techno.create(request.con, request.body, (error) => {
       if (error) {
         response.status(400).json({
-          message: err.message
-        });      
-        return ;
+          message: err.message,
+        });
+        return;
       }
       response.status(200).send("ressource added successfully");
     });
@@ -44,9 +44,9 @@ module.exports = {
     techno.update(request.con, request.body, (error) => {
       if (error) {
         response.status(400).json({
-          message: err.message
-        });      
-        return ;
+          message: err.message,
+        });
+        return;
       }
       response.status(200).send("ressource updated successfully");
     });
@@ -56,9 +56,9 @@ module.exports = {
     techno.delete(request.con, request.params.id, (error) => {
       if (error) {
         response.status(400).json({
-          message: err.message
-        });      
-        return ;
+          message: err.message,
+        });
+        return;
       }
       response.status(200).send("ressource deleted successfully");
     });

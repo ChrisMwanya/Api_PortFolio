@@ -5,11 +5,11 @@ const project = require("./../models/projects");
 module.exports = {
   getProjects: (request, response) => {
     project.get(request.con, (error, result) => {
-      if (error) {  
+      if (error) {
         response.status(400).json({
-          message: err.message
-        });      
-        return ;
+          message: err.message,
+        });
+        return;
       }
       return response.status(200).send(result);
     });
@@ -19,9 +19,9 @@ module.exports = {
     project.getById(request.con, request.params.id, (error, result) => {
       if (error) {
         response.status(400).json({
-          message: err.message
-        });      
-        return ;
+          message: err.message,
+        });
+        return;
       }
       return response.status(200).send(result);
     });
@@ -31,9 +31,9 @@ module.exports = {
     project.create(request.con, request.body, (error) => {
       if (error) {
         response.status(400).json({
-          message: err.message
-        });      
-        return ;
+          message: err.message,
+        });
+        return;
       }
       response.status(200).send("ressource added successfully");
     });
@@ -44,9 +44,9 @@ module.exports = {
     project.update(request.con, request.body, (error) => {
       if (error) {
         response.status(400).json({
-          message: err.message
-        });      
-        return ;
+          message: err.message,
+        });
+        return;
       }
       response.status(200).send("ressource updated successfully");
     });
@@ -56,9 +56,9 @@ module.exports = {
     project.delete(request.con, request.params.id, (error) => {
       if (error) {
         response.status(400).json({
-          message: err.message
-        });      
-        return ;
+          message: err.message,
+        });
+        return;
       }
       response.status(200).send("ressource deleted successfully");
     });
