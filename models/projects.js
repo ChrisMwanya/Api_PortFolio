@@ -39,4 +39,12 @@ module.exports = {
       callback
     );
   },
+
+  delete: (connection, idProject, callback) => {
+    connection.query(
+      "DELETE FROM project WHERE id_project = ?",
+      idProject,
+      callback
+    );
+  },
 };
