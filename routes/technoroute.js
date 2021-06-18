@@ -5,7 +5,6 @@ const technoController = require("./../controllers/technocontroller");
 
 const BASE_URI = "/api_portfolio";
 
-
 router.get(`${BASE_URI}/technos`, technoController.getTechnos);
 router.get(`${BASE_URI}/techno/:id`, technoController.getTechno);
 router.post(`${BASE_URI}/techno/add`, technoController.addTechno);

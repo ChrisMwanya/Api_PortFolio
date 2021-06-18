@@ -12,8 +12,7 @@ module.exports = {
     );
   },
 
-  create: (connection, dataToInsert, callback) => {
-    console.log("model", dataToInsert);
+  create: (connection, dataToInsert, callback) => {    
     connection.query(
       "INSERT INTO techno( nom_techno ) VALUES (?)",
       dataToInsert.nom_techno,

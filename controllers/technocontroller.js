@@ -23,9 +23,8 @@ module.exports = {
     });
   },
 
-  addTechno: (request, response) => { 
+  addTechno: (request, response) => {
     techno.create(request.con, request.body, (error) => {
-      
       if (error) {
         console.log(error);
         return;
@@ -45,7 +44,7 @@ module.exports = {
     });
   },
 
-  deleteTechno: (request, response) => {    
+  deleteTechno: (request, response) => {
     techno.delete(request.con, request.params.id, (error) => {
       if (error) {
         console.log(error);
