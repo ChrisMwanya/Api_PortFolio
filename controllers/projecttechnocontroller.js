@@ -15,7 +15,27 @@ module.exports = {
   getProjectTechno: (request, response) => {
     projecttechno.getById(request.con, request.params.id, (error, result) => {
       if (error) {
-        console.log("requete échoué");
+        console.log(error);
+        return;
+      }
+      return response.status(200).send(result);
+    });
+  },
+
+  getProjectByTechno: (request, response) => {
+    projecttechno.getByIdTechno(request.con, request.params.id, (error, result) => {
+      if (error) {
+        console.log(error);
+        return;
+      }
+      return response.status(200).send(result);
+    });
+  },
+
+  getTechnoByProject: (request, response) => {
+    projecttechno.getByIdProject(request.con, request.params.id, (error, result) => {
+      if (error) {
+        console.log(error);
         return;
       }
       return response.status(200).send(result);
