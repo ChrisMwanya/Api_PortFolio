@@ -23,23 +23,31 @@ module.exports = {
   },
 
   getProjectByTechno: (request, response) => {
-    projecttechno.getByIdTechno(request.con, request.params.id, (error, result) => {
-      if (error) {
-        console.log(error);
-        return;
+    projecttechno.getByIdTechno(
+      request.con,
+      request.params.id,
+      (error, result) => {
+        if (error) {
+          console.log(error);
+          return;
+        }
+        return response.status(200).send(result);
       }
-      return response.status(200).send(result);
-    });
+    );
   },
 
   getTechnoByProject: (request, response) => {
-    projecttechno.getByIdProject(request.con, request.params.id, (error, result) => {
-      if (error) {
-        console.log(error);
-        return;
+    projecttechno.getByIdProject(
+      request.con,
+      request.params.id,
+      (error, result) => {
+        if (error) {
+          console.log(error);
+          return;
+        }
+        return response.status(200).send(result);
       }
-      return response.status(200).send(result);
-    });
+    );
   },
 
   addProjectTechno: (request, response) => {
