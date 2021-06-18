@@ -5,22 +5,25 @@ const projectTechnoController = require("./../controllers/projecttechnocontrolle
 
 const BASE_URI = "/api_portfolio";
 
-router.get(`${BASE_URI}/project_technos`, projectTechnoController.getProjectTechnos);
 router.get(
-	`${BASE_URI}/project_techno/:id`,
-	projectTechnoController.getProjectTechno
+  `${BASE_URI}/project_technos`,
+  projectTechnoController.getProjectTechnos
+);
+router.get(
+  `${BASE_URI}/project_techno/:id`,
+  projectTechnoController.getProjectTechno
 );
 router.post(
-	`${BASE_URI}/project_techno/add`,
-	projectTechnoController.addProjectTechno
+  `${BASE_URI}/project_techno/add`,
+  projectTechnoController.addProjectTechno
 );
 router.put(
-	`${BASE_URI}/project_techno/edit/:id`,
-	projectTechnoController.updateProjectTechno
+  `${BASE_URI}/project_techno/edit/:id`,
+  projectTechnoController.updateProjectTechno
 );
 router.delete(
-	`${BASE_URI}/project_techno/delete/:id`,
-	projectTechnoController.deleteProjectTechno
+  `${BASE_URI}/project_techno/delete/:id`,
+  projectTechnoController.deleteProjectTechno
 );
 
 module.exports = router;
