@@ -27,6 +27,18 @@ module.exports = {
     });
   },
 
+  getIdTechno : (request, response) => {
+    techno.getIdByName(request.con, request.body, (error, result)=>{
+      if (error) {
+        response.status(400).json({
+          message: err.message,
+        });
+        return;
+      }
+      return response.status(200).send(result);
+    })
+  },
+
   addTechno: (request, response) => {
     techno.create(request.con, request.body, (error) => {
       if (error) {
