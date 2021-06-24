@@ -1,4 +1,3 @@
-
 const techno = require("./../models/technos");
 
 module.exports = {

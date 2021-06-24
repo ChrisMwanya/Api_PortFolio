@@ -1,6 +1,4 @@
-
 const mysql = require("mysql");
-
 
 module.exports = mysql.createConnection({
   host: process.env.MYSQL_ADDON_HOST,

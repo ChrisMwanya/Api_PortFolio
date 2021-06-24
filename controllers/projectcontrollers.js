@@ -1,6 +1,4 @@
-
 const project = require("./../models/projects");
-
 
 module.exports = {
   getProjects: (request, response) => {

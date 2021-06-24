@@ -1,4 +1,3 @@
-
 module.exports = {
   get: (connection, callback) => {
     connection.query("SELECT * FROM project_techno", callback);
