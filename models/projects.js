@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+
 module.exports = {
   get: (connection, callback) => {
     connection.query("SELECT * FROM project ", callback);

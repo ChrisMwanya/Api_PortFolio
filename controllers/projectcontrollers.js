@@ -1,7 +1,7 @@
-/* eslint-disable no-undef */
+
 const project = require("./../models/projects");
 
-// eslint-disable-next-line no-undef
+
 module.exports = {
   getProjects: (request, response) => {
     project.get(request.con, (error, result) => {

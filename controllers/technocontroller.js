@@ -1,7 +1,6 @@
-/* eslint-disable no-undef */
+
 const techno = require("./../models/technos");
 
-// eslint-disable-next-line no-undef
 module.exports = {
   getTechnos: (request, response) => {
     techno.get(request.con, (error, result) => {

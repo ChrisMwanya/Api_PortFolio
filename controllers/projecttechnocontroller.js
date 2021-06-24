@@ -1,6 +1,5 @@
 /* eslint-disable no-undef */
 const projecttechno = require("./../models/projecttechno");
-// eslint-disable-next-line no-undef
 module.exports = {
   getProjectTechnos: (request, response) => {
     projecttechno.get(request.con, (error, result) => {

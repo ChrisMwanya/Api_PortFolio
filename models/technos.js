@@ -1,4 +1,4 @@
-// eslint-disable-next-line no-undef
+
 module.exports = {
   get: (connection, callback) => {
     connection.query("SELECT * FROM techno", callback);
