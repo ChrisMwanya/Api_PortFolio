@@ -7,7 +7,7 @@ module.exports = {
     project.get(request.con, (error, result) => {
       if (error) {
         response.status(400).json({
-          message: err.message,
+          message: error.message,
         });
         return;
       }
@@ -19,7 +19,7 @@ module.exports = {
     project.getById(request.con, request.params.id, (error, result) => {
       if (error) {
         response.status(400).json({
-          message: err.message,
+          message: error.message,
         });
         return;
       }
@@ -31,7 +31,7 @@ module.exports = {
     project.create(request.con, request.body, (error) => {
       if (error) {
         response.status(400).json({
-          message: err.message,
+          message: error.message,
         });
         return;
       }
@@ -44,7 +44,7 @@ module.exports = {
     project.update(request.con, request.body, (error) => {
       if (error) {
         response.status(400).json({
-          message: err.message,
+          message: error.message,
         });
         return;
       }
@@ -56,7 +56,7 @@ module.exports = {
     project.delete(request.con, request.params.id, (error) => {
       if (error) {
         response.status(400).json({
-          message: err.message,
+          message: error.message,
         });
         return;
       }

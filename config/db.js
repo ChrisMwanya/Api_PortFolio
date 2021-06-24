@@ -3,8 +3,8 @@ const mysql = require("mysql");
 // eslint-disable-next-line no-undef
 
 module.exports = mysql.createConnection({
-  host: process.env.host_db || "localhost",
-  user: process.env.user_db || "root",
-  password: process.env.password_db || "password",
-  database: process.env.database_db || "portfolio",
+  host: process.env.MYSQL_ADDON_HOST,
+  user: process.env.MYSQL_ADDON_USER,
+  password: process.env.MYSQL_ADDON_PASSWORD,
+  database: process.env.MYSQL_ADDON_DB, 
 });

@@ -7,7 +7,7 @@ module.exports = {
     techno.get(request.con, (error, result) => {
       if (error) {
         response.status(400).json({
-          message: err.message,
+          message: error.message,
         });
         return;
       }
@@ -19,7 +19,7 @@ module.exports = {
     techno.getById(request.con, request.params.id, (error, result) => {
       if (error) {
         response.status(400).json({
-          message: err.message,
+          message: error.message,
         });
         return;
       }
@@ -27,23 +27,23 @@ module.exports = {
     });
   },
 
-  getIdTechno : (request, response) => {
-    techno.getIdByName(request.con, request.body, (error, result)=>{
+  getIdTechno: (request, response) => {
+    techno.getIdByName(request.con, request.body, (error, result) => {
       if (error) {
         response.status(400).json({
-          message: err.message,
+          message: error.message,
         });
         return;
       }
       return response.status(200).send(result);
-    })
+    });
   },
 
   addTechno: (request, response) => {
     techno.create(request.con, request.body, (error) => {
       if (error) {
         response.status(400).json({
-          message: err.message,
+          message: error.message,
         });
         return;
       }
@@ -56,7 +56,7 @@ module.exports = {
     techno.update(request.con, request.body, (error) => {
       if (error) {
         response.status(400).json({
-          message: err.message,
+          message: error.message,
         });
         return;
       }
@@ -68,7 +68,7 @@ module.exports = {
     techno.delete(request.con, request.params.id, (error) => {
       if (error) {
         response.status(400).json({
-          message: err.message,
+          message: error.message,
         });
         return;
       }
